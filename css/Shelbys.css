@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Kanit:wght@300&family=Libre+Baskerville&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -12,45 +13,60 @@
 }
 body{
     background-image: url("../imagens/background.jpg");
-    
+    font-family: 'Gentium Book Plus', serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Libre Baskerville', serif;
 }
 /*--------------------começa o header-----------------------*/
-header{
-    justify-content: space-evenly;
-    padding: 1%;
-    color: #ffffff;
-}
-
 #logo{
-    width: 14%;
-    height: 4%;
+    width: 250px;
+    height: 200px;
+    padding: 2%;
     
 }
-
-/*--------------------textos do header-------------------*/
-.header-menu{
-    float: right;
-    font-size: 20px;
-    margin-top: 4%;
-    width: 35%;
-}
-.header-item{
-    float: left;
-    flex-direction:row;
-    display:flex;
-    margin-left: 10%;
-    padding: 2%;
-    font-weight: bold;
-}
-.header-item:link, :visited{
-    text-decoration: none;
-    color: white;
+ul {
+  margin: 0px;
+  padding: 0px;
 }
 
-.header-item:hover{
-    text-decoration: none;
-    background-color: #0c1733;
+a {
+  color: rgb(240, 240, 240);
+  text-decoration: none;
 }
+
+a:hover {
+  background: #0d1b3d;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+#header {
+  box-sizing: border-box;
+  height: 200px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #172956;
+  font-size: 25px;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
 /*--------------------------------- fim do header------------*/
 
 /*-----------------------------começa o main------------------*/
@@ -87,9 +103,7 @@ main{
   #titulo-lateral-home{
     text-align: center;
     color: white;
-    text-shadow: black 0.3em 0.3em 0.6em;
-    -webkit-text-stroke-width: 0.5px; 
-    -webkit-text-stroke-color: rgb(2, 2, 2);
+    text-shadow: black 0.5em 0.5em 0.5em;
     margin-top: 5%;
   }
   #texto-lateral-home{
@@ -139,9 +153,8 @@ main{
   #texto-lateral-products{
     text-align:right;
     color: white;
-    text-shadow: black 0.3em 0.3em 0.6em;
-    -webkit-text-stroke-width: 0.5px; 
-    -webkit-text-stroke-color: rgb(2, 2, 2);
+    text-shadow: black 0.5em 0.5em 0.7em;
+    font-size: 25px;
     margin-top: 25%;
     padding: 7%;
     max-height: 400px;
@@ -159,9 +172,7 @@ main{
     margin-left: 45%;
     padding-bottom: 2%;
     color: #ffffff;
-    text-shadow: black 0.3em 0.3em 0.6em;
-    -webkit-text-stroke-width: 0.5px; 
-    -webkit-text-stroke-color: rgb(2, 2, 2);
+    text-shadow: black 0.5em 0.5em 0.7em;
   }
 
 .product{
@@ -172,6 +183,7 @@ main{
 
 
 /*--------------------------menu---------------------------*/
+
 .conteudo3-products{
     display: flex;
     flex-direction: row;
@@ -183,7 +195,10 @@ main{
     filter: brightness(50%)
   }
   .menu-products{
+    padding-top: 2%;
     background-color: #24355F;
+    color: #ffffff;
+    text-align: center;
     width:50%;
   }
 
@@ -247,16 +262,12 @@ main{
     text-align: center;
     color: white;
     text-shadow: black 0.3em 0.3em 0.6em;
-    -webkit-text-stroke-width: 0.5px; 
-    -webkit-text-stroke-color: rgb(2, 2, 2);
     margin-top: 5%;
   }
   #texto-lateral-aboutus{
     text-align:center;
     color: white;
     text-shadow: black 0.3em 0.3em 0.6em;
-    -webkit-text-stroke-width: 0.5px; 
-    -webkit-text-stroke-color: rgb(2, 2, 2);
     padding: 7%;
     max-height: 400px;
   }
@@ -267,9 +278,7 @@ footer{
     color: #ffffff;
 }
 #conteudo-footer{
-    text-shadow: black 0.4em 0.4em 0.8em;
-    -webkit-text-stroke-width: 0.6px; 
-    -webkit-text-stroke-color: rgb(2, 2, 2);
+    text-shadow: black 0.5em 0.5em 0.8em;
     margin-left: 33%; 
     float: left;
     flex-direction:row;
@@ -277,6 +286,7 @@ footer{
 }
 
 #texto-footer{
+  text-shadow: black 0.5em 0.5em 0.8em;
     font-size: 100%;
     margin-left: 29%; 
 }
@@ -284,3 +294,246 @@ footer{
     height: 15%;
     width: 20%;
 }
+
+/*-------------------------------- tags para a responsividade usando media -------------------------------*/
+/*----------------deixando o menu hamburguer---------------------*/
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #172956;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    display: flex;
+    flex-direction: column;
+    height: calc(40vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    text-align: center;
+    font-size: 15px;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  }
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    color: #d6d8db;
+
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+    color: #d6d8db;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+/* tamanho mobile*/
+@media only screen and (max-width: 490px) {
+  body{
+    background-image: none;
+    background-color: #172956;
+
+}
+  .corpo-conteudo{
+    margin-left: 2%;
+    width: 100%;
+    height: auto;
+    background-color: #172956;
+  }
+  /*--------------------começa o header-----------------------*/
+  #header {
+    height: 80px;
+    font-size: 25px;
+  }
+
+#logo{
+  width: 100px;
+  height: 80px;
+  
+}
+/*--------------------------------- fim do header------------*/
+
+/*--------------------------------meio home -------------------------*/
+.banner-home{
+  width:60%;
+  height: 35%;
+}
+.frame1{
+  float: right;
+  width:35%;
+  height: 18%;
+  margin-right:3%;
+  margin-top: 3%;
+}
+#titulo-lateral-home{
+  margin-top: 2%;
+  font-size: 10px;
+}
+#texto-lateral-home{
+  text-align: center;
+  color: white;
+  font-size: 8px;
+}
+
+/*--------------------------------meio produtos -------------------------*/
+.banner-home{
+  width:60%;
+  height: 35%;
+}
+.frame1{
+  float: right;
+  width:35%;
+  height: 18%;
+  margin-right:3%;
+  margin-top: 3%;
+}
+#titulo-lateral-home{
+  margin-top: 2%;
+  font-size: 10px;
+}
+#texto-lateral-home{
+  text-align: center;
+  color: white;
+  font-size: 8px;
+}
+
+/*--------------------------------meio about us -------------------------*/
+
+.caixa1-lateral-aboutus{
+  background-color: #24355F;
+  width:80%;
+  text-align: center;
+}
+.caixa2-lateral-aboutus{
+  background-color: #24355F;
+  text-align: center;
+  width:80%;
+}
+#titulo-lateral-aboutus{
+  font-size: 13px;
+  text-align: center;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.6em;
+  margin-top: 5%;
+}
+#texto-lateral-aboutus{
+  text-align:center;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.6em;
+  padding: 7%;
+  font-size: 10px;
+}
+
+/*--------------------------------footer---------------------*/
+/*------------------------começa o footer------------------*/
+footer{
+  margin-top: 7%;
+  padding: 5%;
+  color: #ffffff;
+}
+#conteudo-footer{
+  margin-right: 25%;
+  font-size: 7px;
+  text-shadow: black 0.5em 0.5em 0.8em;
+  float: right;
+  flex-direction:row;
+  display:flex;
+}
+
+#texto-footer{
+  margin: auto; 
+  font-size: 8px;
+  text-align: center;
+}
+#company{
+  height: 60px;
+  width: 65px;
+}
+}
+
+
+
+/* tablets */
+
+@media only screen and (min-width: 480px) and (max-width: 860px) {
+  #header {
+    height: 80px;
+    font-size: 25px;
+    font-size: 20px;
+  }
+
+#logo{
+  width: 100px;
+  height: 90px;
+  
+}
+
+#titulo-lateral-home{
+  margin-top: 2%;
+  font-size: 12px;
+}
+#texto-lateral-home{
+  text-align: justify;
+  color: white;
+  font-size: 13px;
+}
+/*------------------------começa o footer------------------*/
+
+footer{
+  margin-top: 7%;
+  padding: 5%;
+  color: #ffffff;
+}
+#conteudo-footer{
+  margin-right: 35%;
+  font-size: 10px;
+}
+
+#texto-footer{
+  margin: auto; 
+  font-size: 13px;
+  text-align: center;
+}
+#company{
+  height: 80px;
+  width: 85px;
+}
+}
+

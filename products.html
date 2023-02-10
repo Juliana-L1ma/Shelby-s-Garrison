@@ -11,16 +11,21 @@
 <body >
     <div class="corpo-conteudo">
 
-    <header>
-        <img id="logo" src="imagens/logo.png">
+        <header id="header">
+            <img id="logo" src="imagens/logo.png">
 
-        <nav class="header-menu">
-            <a class="header-item" href="index.html">Home</a>
-            <a class="header-item" href="products.html">Products</a>
-            <a class="header-item" href="aboutus.html">About us</a>
-        </nav>
-        
-    </header>
+            <nav id="nav">
+              <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+                <span id="hamburger"></span>
+              </button>
+              <ul id="menu" role="menu">
+                <li><a class="header-item" href="index.html">Home</a></li>
+                <li> <a class="header-item" href="products.html">Products</a></li>
+                <li><a class="header-item" href="aboutus.html">About us</a></li>              
+            </ul>
+            </nav>
+
+        </header>
     <div class="limpar"></div>
     
     <main>
@@ -49,8 +54,21 @@
         <div class="conteudo3-products">
             <img class="cocktail-products" src="imagens/cocktail.jpg">
 
-            <div class="menu-products">Menu</h2>
-                
+            <div class="menu-products">
+                <h2>Menu</h2><br>
+                <ul>
+                    <li>1-Dry Martini -------------------------- U$ 11</li><br>
+                    <li>2-Cuba Libre -------------------------- U$ 11</li><br>
+                    <li>3-Dry Martini -------------------------- U$ 11</li><br>
+                    <li>4-Margarita -------------------------- U$ 11</li><br>
+                    <li>5-Mojito -------------------------- U$ 11</li><br>
+                    <li>6-Pina Colada -------------------------- U$ 11</li><br>
+                    <li>7-Gin tonica -------------------------- U$ 11</li><br>
+                    <li>8-Tanqueray -------------------------- U$ 11</li><br>
+                    <li>9-Tequila sunrise -------------------------- U$ 11</li><br>
+                    <li>10-Moscow Mule -------------------------- U$ 11</li><br>
+
+                </ul>
             </div>
 
             
@@ -71,5 +89,23 @@
     </footer>
 </div>
 </body>
+<script>
+    const btnMobile = document.getElementById('btn-mobile');
 
+function toggleMenu(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  const active = nav.classList.contains('active');
+  event.currentTarget.setAttribute('aria-expanded', active);
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+  }
+}
+
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);
+</script>
 </html>
