@@ -7,9 +7,9 @@
     clear: both;
 }
 .corpo-conteudo{
-    width: 80%;
+    width: 90%;
     background-color: #172956;
-    margin-left: 9%;
+    margin-left: 4%;
 }
 body{
     background-image: url("../imagens/background.jpg");
@@ -372,7 +372,7 @@ footer{
 
 }
   .corpo-conteudo{
-    margin-left: 2%;
+    margin-left: 1%;
     width: 100%;
     height: auto;
     background-color: #172956;
@@ -392,7 +392,7 @@ footer{
 
 /*--------------------------------meio home -------------------------*/
 .banner-home{
-  width:60%;
+  width:62%;
   height: 35%;
 }
 .frame1{
@@ -413,52 +413,52 @@ footer{
 }
 
 /*--------------------------------meio produtos -------------------------*/
-.banner-home{
-  width:60%;
-  height: 35%;
+
+.caixa-lateral-products{
+  background-color: #24355F;
+  width:40%;
 }
-.frame1{
-  float: right;
-  width:35%;
-  height: 18%;
-  margin-right:3%;
-  margin-top: 3%;
-}
-#titulo-lateral-home{
-  margin-top: 2%;
+#texto-lateral-products{
   font-size: 10px;
 }
-#texto-lateral-home{
-  text-align: center;
-  color: white;
+.menu-products h2{
+  font-size: 10px;
+
+}
+#drinks{
+  font-size: 15px;
+}
+.cocktail-products{
+  width:200px;
+  height: 190px;
+  filter: brightness(50%)
+}
+.menu-products{
   font-size: 8px;
 }
-
 /*--------------------------------meio about us -------------------------*/
-
+.conteudo2-aboutus{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  
+}
 .caixa1-lateral-aboutus{
-  background-color: #24355F;
-  width:80%;
-  text-align: center;
+  width:70%;
+  margin: 0 auto;
+  margin-bottom: 5%;
 }
 .caixa2-lateral-aboutus{
-  background-color: #24355F;
-  text-align: center;
-  width:80%;
+  width:70%;
+  margin: 0 auto;
 }
 #titulo-lateral-aboutus{
   font-size: 13px;
-  text-align: center;
-  color: white;
-  text-shadow: black 0.3em 0.3em 0.6em;
   margin-top: 5%;
 }
 #texto-lateral-aboutus{
-  text-align:center;
-  color: white;
-  text-shadow: black 0.3em 0.3em 0.6em;
   padding: 7%;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 /*--------------------------------footer---------------------*/
@@ -513,6 +513,30 @@ footer{
   text-align: justify;
   color: white;
   font-size: 13px;
+}
+
+/*--------------------------começa o main de produtos-----------------------*/
+.caixa-lateral-products{
+  background-color: #24355F;
+  width:40%;
+}
+#texto-lateral-products{
+  font-size: 15px;
+}
+.menu-products h2{
+  font-size: 17px;
+
+}
+#drinks{
+  font-size: 15px;
+}
+.cocktail-products{
+  width:370px;
+  height: 290px;
+  filter: brightness(50%)
+}
+.menu-products{
+  font-size: 12px;
 }
 /*------------------------começa o footer------------------*/
 
